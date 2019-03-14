@@ -27,60 +27,76 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3sD-QA-9A7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-FE-iaj">
-                                            <rect key="frame" x="17" y="76" width="342" height="553"/>
+                                        <tableView clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-FE-iaj">
+                                            <rect key="frame" x="16" y="109" width="343" height="538"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="142" id="Q7K-dY-Cev" customClass="SongCell" customModule="ItunesMusicApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28" width="342" height="142"/>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="150" id="Q7K-dY-Cev" customClass="SongCell" customModule="ItunesMusicApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q7K-dY-Cev" id="Cmb-GD-WmA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="141.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="149.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSX-WL-BdY">
-                                                                <rect key="frame" x="20" y="21" width="113" height="113"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSX-WL-BdY">
+                                                                <rect key="frame" x="25" y="21" width="95" height="108"/>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inr-xD-GTZ">
-                                                                <rect key="frame" x="181" y="37" width="146" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textField opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eow-bu-K2i">
+                                                                <rect key="frame" x="156" y="83" width="143" height="33"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eow-bu-K2i">
-                                                                <rect key="frame" x="181" y="91" width="146" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Track Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inr-xD-GTZ">
+                                                                <rect key="frame" x="156" y="29" width="144" height="33"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="Eow-bu-K2i" secondAttribute="bottom" constant="23" id="0Vk-0Y-jZc"/>
+                                                            <constraint firstItem="OSX-WL-BdY" firstAttribute="leading" secondItem="Cmb-GD-WmA" secondAttribute="leadingMargin" constant="10" id="KAJ-K4-CC7"/>
+                                                            <constraint firstItem="OSX-WL-BdY" firstAttribute="top" secondItem="Cmb-GD-WmA" secondAttribute="topMargin" constant="10" id="RZP-Xy-Bhd"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="OSX-WL-BdY" secondAttribute="bottom" constant="10" id="YAD-qP-HnV"/>
+                                                            <constraint firstItem="Eow-bu-K2i" firstAttribute="top" secondItem="inr-xD-GTZ" secondAttribute="bottom" constant="21" id="YT1-4b-FYn"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="OSX-WL-BdY" secondAttribute="trailing" constant="208" id="YnE-QA-EKB"/>
+                                                            <constraint firstItem="inr-xD-GTZ" firstAttribute="leading" secondItem="OSX-WL-BdY" secondAttribute="trailing" constant="36" id="csR-Ud-hco"/>
+                                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Eow-bu-K2i" secondAttribute="trailing" constant="26" id="fqg-tM-bxk"/>
+                                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="inr-xD-GTZ" secondAttribute="trailing" constant="26" id="lz0-Qo-X8i"/>
+                                                            <constraint firstItem="Eow-bu-K2i" firstAttribute="leading" secondItem="OSX-WL-BdY" secondAttribute="trailing" constant="36" id="oka-ZQ-Fh8"/>
+                                                            <constraint firstItem="Eow-bu-K2i" firstAttribute="top" secondItem="inr-xD-GTZ" secondAttribute="bottom" constant="21" id="tul-cs-JYg"/>
+                                                        </constraints>
                                                     </tableViewCellContentView>
                                                     <connections>
-                                                        <outlet property="albumArtWork" destination="OSX-WL-BdY" id="amM-30-K2n"/>
+                                                        <outlet property="albumArt" destination="OSX-WL-BdY" id="sAB-O1-tX1"/>
                                                         <outlet property="artistName" destination="Eow-bu-K2i" id="TT6-Ei-Mdc"/>
                                                         <outlet property="trackName" destination="inr-xD-GTZ" id="aR8-JV-1Wd"/>
                                                     </connections>
                                                 </tableViewCell>
                                             </prototypes>
+                                            <connections>
+                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="7Hh-k8-sWR"/>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="Mhj-8f-oU7"/>
+                                            </connections>
                                         </tableView>
+                                        <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="search" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQ7-Uv-n3f">
+                                            <rect key="frame" x="16" y="34" width="343" height="40"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ViL-FE-iaj" firstAttribute="leading" secondItem="ssS-zK-YZQ" secondAttribute="leading" constant="17" id="IH9-f4-4kw"/>
-                                        <constraint firstItem="ViL-FE-iaj" firstAttribute="top" secondItem="3sD-QA-9A7" secondAttribute="bottom" constant="20" id="N6h-Ez-JBZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="3sD-QA-9A7" secondAttribute="trailing" id="NE8-cz-R8c"/>
-                                        <constraint firstAttribute="trailing" secondItem="ViL-FE-iaj" secondAttribute="trailing" constant="16" id="dZP-v4-tCV"/>
-                                        <constraint firstItem="3sD-QA-9A7" firstAttribute="top" secondItem="ssS-zK-YZQ" secondAttribute="top" id="pAT-eg-2w0"/>
-                                        <constraint firstAttribute="bottom" secondItem="ViL-FE-iaj" secondAttribute="bottom" constant="18" id="rH5-bU-o1e"/>
-                                        <constraint firstItem="3sD-QA-9A7" firstAttribute="leading" secondItem="ssS-zK-YZQ" secondAttribute="leading" id="xK7-xi-LXu"/>
+                                        <constraint firstItem="ViL-FE-iaj" firstAttribute="top" secondItem="VQ7-Uv-n3f" secondAttribute="bottom" constant="35" id="58x-VQ-l03"/>
+                                        <constraint firstAttribute="trailing" secondItem="ViL-FE-iaj" secondAttribute="trailing" constant="16" id="9G4-Mr-mex"/>
+                                        <constraint firstItem="VQ7-Uv-n3f" firstAttribute="top" secondItem="ssS-zK-YZQ" secondAttribute="top" constant="34" id="H23-tE-Lpr"/>
+                                        <constraint firstItem="VQ7-Uv-n3f" firstAttribute="centerX" secondItem="ssS-zK-YZQ" secondAttribute="centerX" id="M5p-nh-XnC"/>
+                                        <constraint firstItem="ViL-FE-iaj" firstAttribute="leading" secondItem="ssS-zK-YZQ" secondAttribute="leading" constant="16" id="RSd-Jn-2Ao"/>
+                                        <constraint firstAttribute="bottom" secondItem="ViL-FE-iaj" secondAttribute="bottom" id="dSH-mo-T5t"/>
+                                        <constraint firstItem="VQ7-Uv-n3f" firstAttribute="leading" secondItem="ssS-zK-YZQ" secondAttribute="leading" constant="16" id="wVg-tI-afs"/>
+                                        <constraint firstAttribute="trailing" secondItem="VQ7-Uv-n3f" secondAttribute="trailing" constant="16" id="ySY-WL-kmc"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
@@ -99,10 +115,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchField" destination="VQ7-Uv-n3f" id="KAM-Hl-AC0"/>
+                        <outlet property="songTableView" destination="ViL-FE-iaj" id="QC4-bn-Wf8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59.420289855072468" y="26.086956521739133"/>
+            <point key="canvasLocation" x="58.399999999999999" y="25.637181409295355"/>
         </scene>
     </scenes>
     <resources>

@@ -17,12 +17,42 @@ class SongCell: UITableViewCell {
         didSet {
             self.updateUI()
         }
-    }
+    }   
     
     func updateUI() {
         trackName.text = song.trackName
         artistName.text = song.artistName
         
+        self.albumArt.image = nil
+        if let url = URL(string: song.artworkUrl100!){
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let httpResponse = response as? HTTPURLResponse else{
+                    print("http rsponse failed")
+                    return
+                }
+                if data == nil {
+                    if let error = error {
+                        print(error)
+                    }
+                }
+                else{
+                    switch httpResponse.statusCode{
+                    case 200:
+                        DispatchQueue.main.async {
+                            if let imageData = data{
+                                self.albumArt.image = UIImage(data: imageData)
+                            }
+                        }
+                        
+                    default:
+                        print("Received HTTP response code: \(httpResponse.statusCode) - was not handled")
+
+                    }
+                }
+                
+            }.resume()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

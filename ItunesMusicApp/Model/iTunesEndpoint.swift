@@ -9,7 +9,7 @@
 import Foundation
 
 enum ItunesEndpoint{
-    case search(term: String, entity: String)
+    case search(term: String)
     
     var request: URLRequest {
         var components = URLComponents(string: baseURL)!
@@ -35,20 +35,23 @@ enum ItunesEndpoint{
         static let country = "country"
         static let term = "term"
         static let entity = "entity"
+        static let limit = "limit"
     }
     
     private struct DefaultVal {
         static let country = "us"
-        static let term = "apple"
+        static let entity = "musicTrack"
+        static let limit = "100"
     }
     
     var parameters: [String: Any] {
         switch self {
-        case .search(let term, let entity):
+        case .search(let term):
             let parameters: [String : Any] = [
                 ParamKey.term : term,
                 ParamKey.country : DefaultVal.country,
-                ParamKey.entity : entity
+                ParamKey.entity : DefaultVal.entity,
+                ParamKey.limit : DefaultVal.limit
             ]
             return parameters
         }

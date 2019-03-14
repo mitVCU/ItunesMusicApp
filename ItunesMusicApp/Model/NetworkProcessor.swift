@@ -36,68 +36,28 @@ class NetworkProcessor
     typealias JSONHandler = (JSON?, HTTPURLResponse?, Error?) -> Void
     typealias DataHandler = (Data?, HTTPURLResponse?, Error?) -> Void
     
-    func downloadJSON(completion: @escaping JSONHandler)
-    {
-        let dataTask = session.dataTask(with: self.request) { (data, response, error) in
-            // OFF THE MAIN THREAD
-            // Error: missing http response
+    func downloadJSON(_ completion: @escaping JSONHandler){
+        session.dataTask(with: self.request) { (data, response, error) in
+            
             guard let httpResponse = response as? HTTPURLResponse else {
                 let userInfo = [NSLocalizedDescriptionKey : NSLocalizedString("Missing HTTP Response", comment: "")]
-                let error = NSError(domain: NetworkingErrorDomain, code: MissingHTTPResponseError, userInfo: userInfo)
-                completion(nil, nil, error as Error)
+                _ = NSError(domain: NetworkingErrorDomain, code: MissingHTTPResponseError, userInfo: userInfo)
                 return
             }
-            
-            if data == nil {
-                if let error = error {
-                    completion(nil, httpResponse, error)
+            switch httpResponse.statusCode {
+            case 200:
+                do {
+                    //let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+                    let json = try JSONDecoder().decode([Song].self, from: data!)
+                    print(json, "reached")
+                    //completion(json, httpResponse, nil)
+                } catch let error as NSError {
+                    print("error in Network Processor \(error)")
                 }
-            } else {
-                switch httpResponse.statusCode {
-                case 200:
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                       // let json = try JSONDecoder().decode(Song.self, from: data!)
-                        completion(json, httpResponse, nil)
-                    } catch let error as NSError {
-                        completion(nil, httpResponse, error)
-                    }
                 default:
                     print("Received HTTP response code: \(httpResponse.statusCode) - was not handled in NetworkProcessing.swift")
-                }
             }
-        }
-        
-        dataTask.resume()
-    }
-    
-    func downloadData(completion: @escaping DataHandler)
-    {
-        let dataTask = session.dataTask(with: self.request) { (data, response, error) in
-            // OFF THE MAIN THREAD
-            // Error: missing http response
-            guard let httpResponse = response as? HTTPURLResponse else {
-                let userInfo = [NSLocalizedDescriptionKey : NSLocalizedString("Missing HTTP Response", comment: "")]
-                let error = NSError(domain: NetworkingErrorDomain, code: MissingHTTPResponseError, userInfo: userInfo)
-                completion(nil, nil, error as Error)
-                return
-            }
-            
-            if data == nil {
-                if let error = error {
-                    completion(nil, httpResponse, error)
-                }
-            } else {
-                switch httpResponse.statusCode {
-                case 200:
-                    completion(data, httpResponse, nil)
-                default:
-                    print("Received HTTP response code: \(httpResponse.statusCode) - was not handled in NetworkProcessing.swift")
-                }
-            }
-        }
-        
-        dataTask.resume()
+        }.resume()
     }
 }
 
