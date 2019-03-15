@@ -41,7 +41,7 @@ enum ItunesEndpoint{
     private struct DefaultVal {
         static let country = "us"
         static let entity = "musicTrack"
-        static let limit = "100"
+        static let limit = "50"
     }
     
     var parameters: [String: Any] {

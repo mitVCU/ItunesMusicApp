@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		410627AC22381C4A00AED5DA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410627AB22381C4A00AED5DA /* Song.swift */; };
 		410627AE22384EBA00AED5DA /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410627AD22384EBA00AED5DA /* SongList.swift */; };
 		411FE0F42233A1110044E283 /* iTunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE0F32233A1110044E283 /* iTunesClient.swift */; };
 		411FE0F8223469D00044E283 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE0F7223469D00044E283 /* SongCell.swift */; };
@@ -19,6 +18,8 @@
 		4135B2DD221E747F00776DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4135B2DB221E747F00776DC8 /* LaunchScreen.storyboard */; };
 		4135B2E8221E747F00776DC8 /* ItunesMusicAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135B2E7221E747F00776DC8 /* ItunesMusicAppTests.swift */; };
 		4135B2F3221E747F00776DC8 /* ItunesMusicAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135B2F2221E747F00776DC8 /* ItunesMusicAppUITests.swift */; };
+		4196C7772239D7B200C48BF9 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196C7762239D7B200C48BF9 /* Song.swift */; };
+		4196C779223A4E0600C48BF9 /* TableViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196C778223A4E0600C48BF9 /* TableViewExtention.swift */; };
 		41E133A92227318200237CCD /* iTunesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E133A82227318200237CCD /* iTunesEndpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		410627AB22381C4A00AED5DA /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		410627AD22384EBA00AED5DA /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		411FE0F32233A1110044E283 /* iTunesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesClient.swift; sourceTree = "<group>"; };
 		411FE0F7223469D00044E283 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		4135B2EE221E747F00776DC8 /* ItunesMusicAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItunesMusicAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4135B2F2221E747F00776DC8 /* ItunesMusicAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesMusicAppUITests.swift; sourceTree = "<group>"; };
 		4135B2F4221E747F00776DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4196C7762239D7B200C48BF9 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4196C778223A4E0600C48BF9 /* TableViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtention.swift; sourceTree = "<group>"; };
 		41E133A82227318200237CCD /* iTunesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,10 +91,10 @@
 		411FE0EE22337E800044E283 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				410627AB22381C4A00AED5DA /* Song.swift */,
 				410627AD22384EBA00AED5DA /* SongList.swift */,
 				41E133A82227318200237CCD /* iTunesEndpoint.swift */,
 				411FE0F32233A1110044E283 /* iTunesClient.swift */,
+				4196C7762239D7B200C48BF9 /* Song.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4135B2D1221E747D00776DC8 /* ViewController.swift */,
+				4196C778223A4E0600C48BF9 /* TableViewExtention.swift */,
 			);
 			name = Controller;
 			path = "New Group";
@@ -303,7 +306,8 @@
 				4135B2D8221E747D00776DC8 /* ItunesMusicApp.xcdatamodeld in Sources */,
 				410627AE22384EBA00AED5DA /* SongList.swift in Sources */,
 				4135B2D2221E747D00776DC8 /* ViewController.swift in Sources */,
-				410627AC22381C4A00AED5DA /* Song.swift in Sources */,
+				4196C7772239D7B200C48BF9 /* Song.swift in Sources */,
+				4196C779223A4E0600C48BF9 /* TableViewExtention.swift in Sources */,
 				4135B2D0221E747D00776DC8 /* AppDelegate.swift in Sources */,
 				41E133A92227318200237CCD /* iTunesEndpoint.swift in Sources */,
 				411FE0F42233A1110044E283 /* iTunesClient.swift in Sources */,

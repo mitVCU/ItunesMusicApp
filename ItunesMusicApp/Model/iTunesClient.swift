@@ -2,7 +2,7 @@
 //  iTunesClient.swift
 //  ItunesMusicApp
 //
-//  Created by Mit Amin on 3/9/19.
+//  Created by Mit Amin on 2/27/19.
 //  Copyright © 2019 Mit Amin. All rights reserved.
 //
 
@@ -14,6 +14,7 @@ struct iTunesClient {
         
         let searchEndPoint = ItunesEndpoint.search(term: term)
         let searchUrlRequest = searchEndPoint.request
+        var songs = [Song]()
         
         print("search url: " , searchUrlRequest )
         
@@ -32,12 +33,13 @@ struct iTunesClient {
             switch httpResponse.statusCode{
             case 200:
                 do {
-                    let songs = try JSONDecoder().decode(SongList.self, from: data)
-                    print(songs.results[0])
-                    completion(songs.results)
+                    let downloadedSongs = try JSONDecoder().decode(SongList.self, from: data)
+                    songs = downloadedSongs.results
+                    
+                    completion(songs)
                     
                 }catch let error {
-                    print("Failed to create json with error: ", error.localizedDescription)
+                    print("Failed to decode json with error: ", error.localizedDescription)
                 }
             default:
                 print("Error with HTTP Response Code: ", httpResponse.statusCode)
